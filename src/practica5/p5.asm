@@ -14,12 +14,26 @@ _start:
 	mov edx, msg1
 	call puts
 
+	    mov edx, msg5
+    call puts
+
+    
+             
+    mov ebx, msg1    
+    mov byte[ebx+1], 'z'
+
+	mov edx, ebx
+	call puts 
+
+
+
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
 	int	0x80        	; llamada al sistema - fin de programa
 
 section	.data
     msg1	db  'abcdefghijklmnopqrstuvwxyz0123456789',0xa,0 
 	msg2	db  'Cadena antes de modificar: ',0
+	msg3    db	'Cadena modificada: ', 0
 
 
 
