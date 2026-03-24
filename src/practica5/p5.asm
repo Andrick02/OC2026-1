@@ -6,9 +6,6 @@ section	.text
 	
 _start:         
 
-	mov edx, msg2
-	call puts
-
 	
 
 	mov edx, msg2		; edx = dirección de la cadena msg
