@@ -20,7 +20,7 @@ _start:
     
              
     mov ebx, msg1    
-    mov byte[ebx+1], 'z'
+    mov byte[ebx+0], 'z'
 
 	mov edx, ebx
 	call puts 
