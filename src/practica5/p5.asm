@@ -14,7 +14,7 @@ _start:
 	mov edx, msg1
 	call puts
 
-	    mov edx, msg5
+	    mov edx, msg3
     call puts
 
     
