@@ -31,6 +31,12 @@ _start:
 	mov edx, cadena ;Se mueve el registro a cadena
 	call puts
 
+	;Direccionamiento + desplazamiento
+	mov esi, cadena
+	mov byte [esi+26], '@'
+	mov edx, cadena
+	call puts
+
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
 	mov ebx, 0
 	int	0x80        	; llamada al sistema - fin de programa
