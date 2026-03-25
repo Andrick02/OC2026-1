@@ -19,6 +19,11 @@ _start:
 	mov edx, cadena
 	call puts
 
+	mov edx, newline
+	call puts
+	mov edx, msg2
+    call puts
+
 	;Direccionamiento indirecto
 	mov ebx, cadena ;Se manda el contenido al registro
 	add ebx, 23
@@ -34,6 +39,6 @@ section	.data
     cadena	db  'abcdefghijklmnopqrstuvwxyz0123456789',0xa,0 
 	msg1	db  'Cadena antes de modificar: ',0
 	msg2    db	'Cadena modificada: ', 0
-
+	newline db 10,0
 
 
