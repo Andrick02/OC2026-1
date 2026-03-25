@@ -27,7 +27,7 @@ _start:
 	;Direccionamiento indirecto
 	mov ebx, cadena ;Se manda el contenido al registro
 	add ebx, 23
-	mov byte [ebx], 'X'
+	mov [ebx], 'X'
 	mov edx, ebx ;Se mueve el registro a edx
 	call puts
 
