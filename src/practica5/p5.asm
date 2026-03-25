@@ -13,9 +13,17 @@ _start:
 
 	    mov edx, msg2
     call puts
-	       
+
+	;Direccionamiento directo       
 	mov byte [cadena], 'Z'
 	mov edx, cadena
+	call puts
+
+	;Direccionamiento indirecto
+	mov esi, [cadena] ;Se manda el contenido al registro
+	add esi, 23
+	mov byte [esi], 'X'
+	mov edx, esi ;Se mueve el registro a edx
 	call puts
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
