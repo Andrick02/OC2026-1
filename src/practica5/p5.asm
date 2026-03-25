@@ -18,7 +18,7 @@ _start:
     call puts
 	       
     mov ebx, cadena    
-    mov byte ebx+1 ;Se accede al contenido
+    mov byte [ebx], 'Z' ;Se accede al contenido
 
 	mov edx, ebx
 	call puts ;Imprime la cadena modificada
