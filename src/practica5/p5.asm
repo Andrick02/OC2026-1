@@ -16,11 +16,11 @@ _start:
 
 	    mov edx, msg3
     call puts
-
+	
     
              
     mov ebx, msg1    
-    mov byte[ebx+0], 90
+    mov byte[ebx], 90
 
 	mov edx, ebx
 	call puts 
