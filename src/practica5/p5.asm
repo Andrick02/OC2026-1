@@ -14,7 +14,7 @@ _start:
 	    mov edx, msg2
     call puts
 
-	;Direccionamiento directo       
+	;Direccionamiento directo    
 	mov byte [cadena], 'Z'
 	mov edx, cadena
 	call puts
@@ -27,6 +27,9 @@ _start:
 	add ebx, 23
 	mov byte [ebx], 'X'
 	mov edx, cadena ;Se mueve el registro a cadena
+	call puts
+	
+	mov edx, msg2
 	call puts
 
 	;Direccionamiento + desplazamiento
