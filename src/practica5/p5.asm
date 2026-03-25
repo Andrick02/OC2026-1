@@ -58,6 +58,16 @@ _start:
 	mov edx, cadena
 	call puts
 
+	mov edx, msg2
+	call puts
+
+	;Direccionamiento relativa a base + indice con indice escalado
+	mov esi, cadena
+	mov ebx, 8
+	mov byte [esi+ebx*2+3], '%'
+	mov edx, cadena
+	call puts
+
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
 	mov ebx, 0
 	int	0x80        	; llamada al sistema - fin de programa
