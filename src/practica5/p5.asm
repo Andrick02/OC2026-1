@@ -15,7 +15,7 @@ _start:
     call puts
 	       
 	mov byte [cadena], 'Z'
-	mov edx, [cadena]
+	mov edx, cadena
 	call puts
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
