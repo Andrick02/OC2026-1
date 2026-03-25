@@ -27,6 +27,7 @@ _start:
 	call puts
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
+	mov ebx, 0
 	int	0x80        	; llamada al sistema - fin de programa
 
 section	.data
