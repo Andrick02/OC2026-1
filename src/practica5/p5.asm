@@ -8,22 +8,20 @@ _start:
 
 	
 
-	mov edx, msg2		; edx = dirección de la cadena msg
+	mov edx, msg1		; edx = dirección de la cadena msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
-	mov edx, msg1
+	mov edx, cadena
 	call puts
 
-	    mov edx, msg3
+	    mov edx, msg2
     call puts
-	
-    
-             
-    mov ebx, msg1    
-    mov byte[ebx], 90
+	       
+    mov ebx, cadena    
+    mov byte ebx, 'Z' ;Se accede al contenido
 
 	mov edx, ebx
-	call puts 
+	call puts ;Imprime la cadena modificada
 
 
 
@@ -31,9 +29,9 @@ _start:
 	int	0x80        	; llamada al sistema - fin de programa
 
 section	.data
-    msg1	db  'abcdefghijklmnopqrstuvwxyz0123456789',0xa,0 
-	msg2	db  'Cadena antes de modificar: ',0
-	msg3    db	'Cadena modificada: ', 0
+    cadena	db  'abcdefghijklmnopqrstuvwxyz0123456789',0xa,0 
+	msg1	db  'Cadena antes de modificar: ',0
+	msg2    db	'Cadena modificada: ', 0
 
 
 
