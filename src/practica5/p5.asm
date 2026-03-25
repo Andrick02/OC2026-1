@@ -5,9 +5,6 @@ section	.text
 	global _start       ;referencia para inicio de programa
 	
 _start:         
-
-	
-
 	mov edx, msg1		; edx = dirección de la cadena msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
@@ -17,13 +14,9 @@ _start:
 	    mov edx, msg2
     call puts
 	       
-    mov ebx, cadena    
-    mov [ebx], 'Z' ;Se accede al contenido
-
-	mov edx, ebx
-	call puts ;Imprime la cadena modificada
-
-
+	mov byte [cadena], 'Z'
+	mov edx, [cadena]
+	call puts
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
 	int	0x80        	; llamada al sistema - fin de programa
