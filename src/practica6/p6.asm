@@ -16,14 +16,19 @@ _start:
 	
 	.capturar:
 		call getche		      ;captura un caractere en al
+		add al, 32
 			mov byte[ebx], al ; caracter lo mueves a registro base
 		inc ebx				  ; incremento la posicion en ebx para capturar nuevamente
 	cmp al,10	; compara si al contiene caracter ENTER en ASCCI
 	jne .capturar	; sino es enter salta a capturar de nuevo
 	mov byte [ebx],0 ; ingreso caracter nulo
 
+	
+
 	mov edx, msg_cadena	;imprimir mensaje
 	call puts
+
+	
 	
 	mov edx, msg1	; imprimir cadena
 	call puts
@@ -36,4 +41,4 @@ section	.data
 	cadena db 0
 
 	msg_cadena db  "Ingresa una cadena de caracteres",10,0
-	msg1 db  "Cadena ingresada: " ,10,0
+	msg1 db  "Cadena ingresa77777da: " ,10,0

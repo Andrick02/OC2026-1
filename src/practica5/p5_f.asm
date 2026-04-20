@@ -29,4 +29,3 @@ section	.data
     cadena	db  'abcdefghijklmnopqrstuvwxyz0123456789',0xa,0 
 	msg1	db  'Cadena antes de modificar: ',0
 	msg2    db	'Cadena modificada: ', 0
-
