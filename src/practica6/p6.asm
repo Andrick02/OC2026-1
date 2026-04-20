@@ -24,8 +24,8 @@ _start:
 
 	mov edx, msg1	;imprimir mensaje
 	call puts
-
-	mov edx, cadena	; imprimir cadena
+	mov cadena, [ebx]
+	mov edx, msg2	; imprimir cadena
 	call puts
 
  	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
