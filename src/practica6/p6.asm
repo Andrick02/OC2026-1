@@ -24,7 +24,7 @@ _start:
 
 	mov edx, msg_cadena	;imprimir mensaje
 	call puts
-	mov cadena, [ebx]
+	
 	mov edx, msg1	; imprimir cadena
 	call puts
 
