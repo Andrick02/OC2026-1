@@ -22,10 +22,10 @@ _start:
 	jne .capturar	; sino es enter salta a capturar de nuevo
 	mov byte [ebx],0 ; ingreso caracter nulo
 
-	mov edx, msg1	;imprimir mensaje
+	mov edx, msg_cadena	;imprimir mensaje
 	call puts
 	mov cadena, [ebx]
-	mov edx, msg2	; imprimir cadena
+	mov edx, msg1	; imprimir cadena
 	call puts
 
  	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
