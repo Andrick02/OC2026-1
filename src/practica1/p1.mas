@@ -1,0 +1,120 @@
+inicio, Input
+Store switch /El valor que se ingrese se almacena en la variable switch
+
+/Se crea un SwitchCase
+caso1, Load switch /Se cargar el valor en el acumulador
+Subt uno /Se resta 1 para ver que siempre pase por los casos
+Store n_valor
+SkipCond 400 /Se hace la comparacion para ver que sea igual a 0   CASO1 = 1}
+Jump caso2
+Jump capturar_variables
+
+caso2, Load switch /Se hace el caso 2
+Subt dos
+Store n_valor
+SkipCond 400
+Jump caso3
+Jump multi_inicio
+
+caso3, Load switch
+Subt tres
+Store n_valor
+SkipCond 400
+Jump fin
+Load var2
+SkipCond 400
+Jump potencia_inicio
+Jump valor_0
+
+valor_0, Load uno
+Output
+Jump fin
+
+
+/funciones
+capturar_variables, Input
+Store var1
+Input
+Store var2
+Jump inicio
+
+
+/Se crea la subrutina de multiplicacion
+multi_inicio, Load cero /Se inicia la subrutina de multiplicacion
+Store r_multi
+
+multi_loop, Load var1
+Add r_multi /Se crea una nueva variable para almacenar el nuevo valor
+Store r_multi
+
+Load var2
+Subt uno /Se resta uno a la variable 2 para tenerla como contador
+Store var2
+SkipCond 400 /Se compara si es igual a cero para ver si repite la rutina 
+Jump multi_loop
+
+Load r_multi
+Output
+Jump fin
+
+/Se crea la subrutina de potencia
+potencia_inicio, Load var1
+Store r_potencia /Se crea una nueva variable para almacenar el nuevo valor
+
+Load var2
+SkipCond 400
+Subt uno /Se resta uno a la variable 2 para tenerla como contador
+Store var2
+
+SkipCond 400 /Se compara si es igual a cero para ver si repite la rutina 
+Jump potencia_loop
+
+Load r_potencia
+Output
+Jump fin
+
+potencia_loop, Load cero
+Store r_multi
+
+Load var1
+Store cont
+
+multi_interno, Load r_multi
+Add r_potencia
+Store r_multi
+
+Load cont
+Subt uno
+Store cont
+SkipCond 400
+Jump multi_interno
+
+Load r_multi
+Store r_potencia
+
+Load var2
+Subt uno
+Store var2
+SkipCond 400
+Jump potencia_loop
+
+Load r_potencia
+Output
+Jump fin
+
+
+/Fin del Programa
+fin, Halt
+
+switch, DEC 0
+var1, DEC 0
+var2, DEC 0
+r_multi, DEC 0
+r_potencia, DEC 0
+cont, DEC 0
+n_valor, DEC 0
+
+uno, DEC 1
+dos, DEC 2
+tres, DEC 3
+cero, DEC 0

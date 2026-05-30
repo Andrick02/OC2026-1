@@ -9,7 +9,7 @@ _start:
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 	mov edx, cadena
 	call puts
-	
+	practi
 	mov edx, msg2
     call puts
 
